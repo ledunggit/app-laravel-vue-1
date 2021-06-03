@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+  php:
+    build:
+      dockerfile: Dockerfile
+      context: ./php
+    user: root
+    volumes:
+      - ./myapp:/var/www/myapp
+
+  apache2:
+    image: httpd:latest
+    volumes:
+      - ./myapp:/var/www/myapp
+      - ./config/httpd.conf:/usr/local/apache2/conf/httpd.conf
+    ports:
+      - "80:80"
+
+  mysql:
+    image: mysql:latest
+    volumes:
+      - ./database:/var/lib/mysql
+      - ./config/my.cnf:/etc/mysql/my.cnf
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=crm
+      - MYSQL_USER=ledung
+      - MYSQL_PASSWORD=Ledung362
+    ports:
+      - 3306:3306
+
+  phpmyadmin:
+    image: phpmyadmin:5.1-apache
+    ports:
+      - 8000:80
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOSTS=mysql
+      - MYSQL_ROOT_PASSWORD=root
+
