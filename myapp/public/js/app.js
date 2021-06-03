@@ -1991,6 +1991,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -37922,7 +37932,23 @@ var staticRenderFns = [
         _c("img", { attrs: { src: "/images/horizontal.png", alt: "" } })
       ]),
       _vm._v(" "),
-      _c("p")
+      _c("p", [
+        _vm._v(
+          "\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, ea. Commodi necessitatibus nobis ullam, fugit itaque harum repudiandae, debitis dignissimos vero tempora obcaecati maxime! Veniam cumque rem exercitationem. Quod, necessitatibus.\n  "
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "task" }, [
+        _c("div", { staticClass: "add-tasks" }, [
+          _c("h2", [_vm._v("Today's Task")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "add-action" }, [
+            _c("img", { attrs: { src: "/images/add.png", alt: "" } })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("ul", { staticClass: "tasks-list" })
+      ])
     ])
   }
 ]
