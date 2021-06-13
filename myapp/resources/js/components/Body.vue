@@ -1,5 +1,5 @@
 <template>
-  <div id="Body">
+  <div id="body">
     <LeftBody />
     <RightBody />
   </div>
